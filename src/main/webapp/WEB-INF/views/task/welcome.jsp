@@ -18,7 +18,7 @@
 		<a href="/display">
 			<button>Display Tasks</button>
 		</a> &nbsp;
-		<a href="/update">
+		<a href="/updatefromwelcome">
 			<button>Update Tasks</button>
 		</a>
 	

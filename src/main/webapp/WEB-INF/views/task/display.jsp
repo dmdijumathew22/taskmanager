@@ -34,6 +34,7 @@ th, td {
 				<th>Start Date</th>
 				<th>End Date</th>
 				<th>Description</th>
+				<th>Severity</th>
 				<th>User id</th>
 				<th>select task</th>
 			</tr>
@@ -45,14 +46,15 @@ th, td {
 					<td>${task.startdate}</td>
 					<td>${task.enddate}</td>
 					<td>${task.description}</td>
-					<td>${task.userId}</td>
+					<td>${task.severity}</td>
+					<td>${task.user.userid}</td>
 					<td><input type="radio" name="selected" value="${task.id}" ></td>
 				</tr>
 			</c:forEach>
 		</table>
-		<input type="submit" value="Update" onclick="form.action='update/<%=request.getParameter("selected")%>';">
+		<input type="submit" value="Update" onclick="form.action='${pageContext.request.contextPath}/update';">
 		&nbsp;
-		<input type="submit" value="Delete" onclick="form.action='delete/${selected}';">
+		<input type="submit" value="Delete" onclick="form.action='${pageContext.request.contextPath}/delete';">
 		</form>
 		<%-- <%String id =request.getParameter("selected");%>
 		<br />

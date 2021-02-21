@@ -15,7 +15,6 @@ import lombok.Data;
 
 @Data
 @Entity
-
 public class Tasks {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +23,8 @@ public class Tasks {
 	private Date startdate;
 	private Date enddate;
 	private String description;
-	
-	private int userId;
+	private String severity;
+	@ManyToOne
+	private User user;
 
 }

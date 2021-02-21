@@ -59,6 +59,15 @@ public class UserController {
 	public String create() {
 		return "task/create";
 	}
+	@PostMapping("/create")
+	public String createTask(@ModelAttribute("task") Tasks task,
+			/* @RequestParam(name="user")String userId, */ ModelMap model, User user) {
+		service.saveOrUpdate(task);
+		System.out.println(task.toString());
+		user=repo.findById(1).get();
+		model.put("tasks", service.getAllTasksByUser(user));
+		return "task/display";
+	}
 
 	@PostMapping("/delete")
 	public String delete(@RequestParam(name = "selected") String id, ModelMap model) {
@@ -67,7 +76,7 @@ public class UserController {
 		return "task/delete";
 	}
 
-	@PostMapping("delete/deleteconf")
+	@PostMapping("/deleteconf")
 	public String deleteconf(@RequestParam(name="task.id") String id, ModelMap model) {
 		System.out.println(service.findById(Integer.parseInt(id)).get());
 		service.deleteTask(service.findById(Integer.parseInt(id)).get());
@@ -83,9 +92,27 @@ public class UserController {
 		return "task/display";
 	}
 
-	@GetMapping("/update")
-	public String update() {
+	@GetMapping("/updatefromwelcome")
+	public String updatefromwelcome(ModelMap model) {
+		model.put("msg", "Select task to update");
+		model.put("tasks", service.getAllTasksByUser(user));
+		return "task/display";
+	}
+	@PostMapping("/update")
+	public String update(@RequestParam(name = "selected") String id, ModelMap model,Tasks task) {
+		System.out.println(id);
+		model.put("task", service.findById(Integer.parseInt(id)).get());
 		return "task/update";
 	}
-
+	@PostMapping("/updateconf")
+	public String updateconf(@ModelAttribute("task") Tasks task, ModelMap model) {
+		System.out.println(task.toString());
+		//model.put("task", service.findById(Integer.parseInt(id)).get());
+		model.put("msg", "task updated");
+		user=repo.findById(1).get();
+		service.saveOrUpdate(task);
+		model.put("tasks", service.getAllTasksByUser(user));
+		return "task/display";
+		
+	}
 }

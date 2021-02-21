@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hcl.model.TaskRepo;
 import com.hcl.model.Tasks;
+import com.hcl.model.user.User;
 @Service
 public class TaskServiceImpl implements TaskService {
 	@Autowired
@@ -43,9 +44,9 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public List<Tasks> getAllTasksByUser(int userid) {
+	public List<Tasks> getAllTasksByUser(User user) {
 		
-		return repo.findAllByUserId(userid);
+		return repo.findAllByUser(user);
 	}
 
 	@Override

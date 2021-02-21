@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-//@Builder
 @NoArgsConstructor
 public class User {
 	@Id
@@ -21,10 +20,11 @@ public class User {
 	private String pwd;
 	
 	
-	public void setPwd(String pwd) {
-		//BCryptPasswordEncoder bCryptPasswordEncoder= new BCryptPasswordEncoder();
-		//this.pwd = bCryptPasswordEncoder.encode(pwd);
-	}
+	/*
+	 * public void setPwd(String pwd) { //BCryptPasswordEncoder
+	 * bCryptPasswordEncoder= new BCryptPasswordEncoder(); //this.pwd =
+	 * bCryptPasswordEncoder.encode(pwd); }
+	 */
 	
 	
 
