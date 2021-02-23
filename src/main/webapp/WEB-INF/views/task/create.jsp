@@ -49,7 +49,7 @@ th, td {
 							<option value="MEDIUM">MEDIUM</option>
 							<option value="LOW">LOW</option>
 					</select></td>
-					<td><input type="text" name="user" id="user" value="1" readonly /></td>
+					<td><input type="text" name="user" id="user" value="${userid}" readonly /></td>
 
 				</tr>
 
@@ -57,5 +57,9 @@ th, td {
 			<input type="submit" value="CREATE" />
 		</form>
 	</div>
+	&nbsp;
+		<a href="/logout">
+			<button>logout</button>
+		</a>
 </body>
 </html>

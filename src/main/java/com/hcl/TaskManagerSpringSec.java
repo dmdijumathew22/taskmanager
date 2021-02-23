@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoSpringSecApplication {
+public class TaskManagerSpringSec {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringSecApplication.class, args);
+		SpringApplication.run(TaskManagerSpringSec.class, args);
 	}
 
 }

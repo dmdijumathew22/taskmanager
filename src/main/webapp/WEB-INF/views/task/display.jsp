@@ -56,23 +56,11 @@ th, td {
 		&nbsp;
 		<input type="submit" value="Delete" onclick="form.action='${pageContext.request.contextPath}/delete';">
 		</form>
-		<%-- <%String id =request.getParameter("selected");%>
-		<br />
-		<br /> <a href="/create">
 		
-			<button>Create Task</button>
-		</a> 
-		<br />
-		<br />
-			<form action="delete/<%=request.getParameter("selected") %>" method ="post">
-			
-			<input type ="submit" value ="DELETE"/>
-			</form>
-	 --%><%-- 	 &nbsp; &nbsp;<form action="update" method ="post">
-			<label id="${id}"<%= request.getAttribute(name)("selected") %>></label>
-			<input type ="submit" value ="UPDATE"/>
-			</form> --%>
-
 	</div>
+	&nbsp;
+		<a href="/logout">
+			<button>logout</button>
+		</a>
 </body>
 </html>

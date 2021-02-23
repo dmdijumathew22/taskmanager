@@ -20,6 +20,9 @@
 		</a> &nbsp;
 		<a href="/updatefromwelcome">
 			<button>Update Tasks</button>
+		</a>&nbsp;
+		<a href="/logout">
+			<button>logout</button>
 		</a>
 	
 	</div>

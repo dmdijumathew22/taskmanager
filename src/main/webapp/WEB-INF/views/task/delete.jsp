@@ -51,7 +51,7 @@ th, td {
 					value="${task.enddate}" readonly /></td>
 				<td><input type="text" name="task.description"
 					value="${task.description}" readonly /></td>
-					<td><input type="text" name="task.severity"
+				<td><input type="text" name="task.severity"
 					value="${task.severity}" readonly /></td>
 				<td><input type="text" name="task.userId"
 					value="${task.user.userid}" readonly /></td>
@@ -62,5 +62,9 @@ th, td {
 		<input type="submit" value="Confirm" /> <input type="submit"
 			value="back" onclick="${pageContext.request.contextPath}/display';">
 	</form>
+&nbsp;
+		<a href="/logout">
+			<button>logout</button>
+		</a>
 </body>
 </html>

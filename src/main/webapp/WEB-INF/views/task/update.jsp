@@ -50,6 +50,9 @@ ${msg}
 			<input type="submit" value="update" />
 		</form>
 	</div>
-
+&nbsp;
+		<a href="/logout">
+			<button>logout</button>
+		</a>
 </body>
 </html>
