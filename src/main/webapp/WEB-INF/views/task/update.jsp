@@ -7,6 +7,25 @@
 <meta charset="ISO-8859-1">
 <title>update task</title>
 </head>
+<style type="text/css">
+table {
+	width: 100%;
+	align-content: center;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px;
+	text-align: center;
+}
+th{
+ background-color: lightblue;
+ }
+</style>
 <body>
 ${msg}
 <div align="center">

@@ -13,7 +13,9 @@ table {
 	align-content: center;
 	justify-content: center;
 }
-
+th{
+ background-color: lightblue;
+ }
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;

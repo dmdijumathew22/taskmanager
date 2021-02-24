@@ -21,6 +21,9 @@ th, td {
 	padding: 15px;
 	text-align: center;
 }
+th{
+ background-color: lightblue;
+ }
 </style>
 <body>
 	<div align="center">

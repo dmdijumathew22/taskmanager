@@ -10,19 +10,13 @@
 	<div align="center">
 		<h3>${msg}</h3>
 		<h5>select an option to continue</h5>
-		<a href="/create">
-			<button>Create Task</button>
-		</a> &nbsp; <a href="/deletefromwelcome">
-			<button>Delete Task</button>
-		</a> &nbsp; <a href="/display">
-			<button>Display Tasks</button>
-		</a> &nbsp; <a href="/updatefromwelcome">
-			<button>Update Tasks</button>
-		</a>&nbsp; <a href="/logout">
-			<button>logout</button>
-		</a> <br />
-		<br /> To view tasks by all users (only for admins) : <a
-			href="/admin/">
+		<a href="/create"><button>Create Task</button></a>
+		&nbsp;<a href="/deletefromwelcome"><button>Delete Task</button></a>
+		&nbsp;<a href="/display"><button>Display Tasks</button></a>
+		&nbsp;<a href="/updatefromwelcome"><button>Update Tasks</button></a>
+		&nbsp;<a href="/logout"><button>logout</button></a><br />
+		<br /> To view tasks by all users (only for admins) : 
+		<a href="/admin/">
 			<button>Admin Access</button>
 		</a>
 	</div>
