@@ -24,10 +24,11 @@ th, td {
 </style>
 <body>
 	<div align="center">
-		<form action="create" method="post" ><!-- modelAttribute="task" -->
+		<form action="create" method="post">
+			<!-- modelAttribute="task" -->
 			<table style="width: 75%">
 				<tr>
-					
+
 					<th>Task Name</th>
 					<th>Start Date</th>
 					<th>End Date</th>
@@ -39,17 +40,18 @@ th, td {
 
 				<tr>
 
-					
-					<td><input type="text" name="taskname" id="taskname"/></td>
-					<td><input type="date" name="startdate" id="startdate" /></td>
-					<td><input type="date" name="enddate" id="enddate"/></td>
+
+					<td><input type="text" name="taskname" id="taskname" required/></td>
+					<td><input type="date" name="startdate" id="startdate" required/></td>
+					<td><input type="date" name="enddate" id="enddate" required/></td>
 					<td><textarea name="description" id="description"></textarea></td>
 					<td><select name="severity" id="severity">
 							<option value="HIGH">HIGH</option>
 							<option value="MEDIUM">MEDIUM</option>
 							<option value="LOW">LOW</option>
 					</select></td>
-					<td><input type="text" name="user" id="user" value="${userid}" readonly /></td>
+					<td><input type="text" name="user" id="user" value="${userid}"
+						readonly /></td>
 
 				</tr>
 
@@ -58,11 +60,11 @@ th, td {
 		</form>
 	</div>
 	&nbsp;&nbsp;
-		<a href="/logout">
-			<button>logout</button>
-		</a>&nbsp;&nbsp;
-		<a href="/">
-			<button>Back to Home</button>
-		</a>
+	<a href="/logout">
+		<button>logout</button>
+	</a>&nbsp;&nbsp;
+	<a href="/">
+		<button>Back to Home</button>
+	</a>
 </body>
 </html>
