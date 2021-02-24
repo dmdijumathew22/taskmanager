@@ -43,7 +43,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.defaultSuccessUrl("/welcome")
 		.and()
 		.logout().logoutSuccessUrl("/").invalidateHttpSession(true)
-		.clearAuthentication(true);
+		.clearAuthentication(true)
+		.and()
+	    .exceptionHandling().accessDeniedPage("/accessdenied");
 
 	}
 }

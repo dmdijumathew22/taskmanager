@@ -98,7 +98,19 @@ public class UserController {
 	}
 
 	@PostMapping("/delete")
-	public String delete(@RequestParam(name = "selected") String id, ModelMap model) {
+	public String delete(@RequestParam(name = "selected", required = false) String id, ModelMap model) {
+		if(id==null) {
+			model.put("msg", "Please select a task to delete");
+			if (!service.getAllTasksByUser(user).isEmpty()) {
+
+				model.put("tasks", service.getAllTasksByUser(user));
+			} else {
+				model.put("msg", "No tasks created");
+			}
+
+			return "task/display";
+		}
+		
 		System.out.println(id);
 		model.put("task", service.findById(Integer.parseInt(id)).get());
 		return "task/delete";
@@ -134,7 +146,7 @@ public class UserController {
 	@PostMapping("/update")
 	public String update(@RequestParam(name = "selected", required = false) String id, ModelMap model, Tasks task) {
 		if(id==null) {
-			model.put("msg", "Please select an option to update");
+			model.put("msg", "Please select a task to update");
 			if (!service.getAllTasksByUser(user).isEmpty()) {
 
 				model.put("tasks", service.getAllTasksByUser(user));
@@ -160,5 +172,9 @@ public class UserController {
 		//model.put(", model)
 		return "task/display";
 
+	}
+	@GetMapping("/accessdenied")
+	public String denied() {
+		return"accessDenied";
 	}
 }
