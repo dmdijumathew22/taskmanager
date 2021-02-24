@@ -36,7 +36,7 @@ th, td {
 				<th>Description</th>
 				<th>Severity</th>
 				<th>User id</th>
-				<th>select task</th>
+				<!-- <th>select task</th> -->
 			</tr>
 			<c:forEach items="${tasks}" var="task">
 				<tr>
@@ -48,7 +48,7 @@ th, td {
 					<td>${task.description}</td>
 					<td>${task.severity}</td>
 					<td>${task.user.userid}</td>
-					<td><input type="radio" name="selected" value="${task.id}" ></td>
+					<%-- <td><input type="radio" name="selected" value="${task.id}" ></td> --%>
 				</tr>
 			</c:forEach>
 		</table>

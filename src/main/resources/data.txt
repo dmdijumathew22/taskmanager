@@ -1,0 +1,2 @@
+INSERT INTO `taskmanager`.`user` (`pwd`, `role`, `username`) VALUES ('$2a$10$ZiJ0ej7ugft1WL/gtAA44.UpxuP.5E8yhcepf0iv5ouaKJYF03sjq', 'ROLE_ADMIN', 'admin');
+password = 12345 (bcrypt)
