@@ -1,5 +1,7 @@
 package com.hcl.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -29,11 +31,18 @@ public class UserController {
 
 	static User user;
 
-	@GetMapping("/")
+	@GetMapping("/login")
 	public String login() {
 		return "user/login";
 
 	}
+
+	@GetMapping("/logout")
+	public String logout() {
+		return "user/login";
+
+	}
+	
 
 	@GetMapping("/register")
 	public String registration() {
@@ -53,7 +62,7 @@ public class UserController {
 		return "user/login";
 	}
 
-	@RequestMapping("/welcome")
+	@GetMapping("/")
 	public String welcome(ModelMap model) {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -78,6 +87,12 @@ public class UserController {
 		task.setUser(user);
 		service.saveOrUpdate(task);
 		System.out.println(task.toString());
+		model.put("tasks", service.getAllTasksByUser(user));
+		return "task/display";
+	}
+	@GetMapping("/deletefromwelcome")
+	public String deletefromwelcome(ModelMap model) {
+		model.put("msg", "Select task to delete");
 		model.put("tasks", service.getAllTasksByUser(user));
 		return "task/display";
 	}
@@ -117,7 +132,19 @@ public class UserController {
 	}
 
 	@PostMapping("/update")
-	public String update(@RequestParam(name = "selected") String id, ModelMap model, Tasks task) {
+	public String update(@RequestParam(name = "selected", required = false) String id, ModelMap model, Tasks task) {
+		if(id==null) {
+			model.put("msg", "Please select an option to update");
+			if (!service.getAllTasksByUser(user).isEmpty()) {
+
+				model.put("tasks", service.getAllTasksByUser(user));
+			} else {
+				model.put("msg", "No tasks created");
+			}
+
+			return "task/display";
+		}
+		
 		System.out.println(id);
 		model.put("task", service.findById(Integer.parseInt(id)).get());
 		return "task/update";

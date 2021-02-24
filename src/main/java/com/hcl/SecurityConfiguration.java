@@ -38,11 +38,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
-		.loginPage("/").permitAll()
-		.loginProcessingUrl("/welcome")
+		.loginPage("/login").permitAll()
+		.loginProcessingUrl("/welcome") 
 		.defaultSuccessUrl("/welcome")
 		.and()
-		.logout().invalidateHttpSession(true)
+		.logout().logoutSuccessUrl("/").invalidateHttpSession(true)
 		.clearAuthentication(true);
 
 	}

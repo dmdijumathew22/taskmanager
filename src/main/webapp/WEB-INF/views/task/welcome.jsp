@@ -12,7 +12,7 @@
 		<a href="/create">
 			<button>Create Task</button>
 		</a> &nbsp;
-		<a href="/delete">
+		<a href="/deletefromwelcome">
 			<button>Delete Task</button>
 		</a> &nbsp;
 		<a href="/display">

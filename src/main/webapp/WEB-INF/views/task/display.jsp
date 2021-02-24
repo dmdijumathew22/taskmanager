@@ -61,6 +61,9 @@ th, td {
 	&nbsp;
 		<a href="/logout">
 			<button>logout</button>
+		</a>&nbsp;&nbsp;
+		<a href="/">
+			<button>Back to Home</button>
 		</a>
 </body>
 </html>

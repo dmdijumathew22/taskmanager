@@ -36,23 +36,28 @@ ${msg}
 				<td><input type="text" name="description" id="enddate"
 					value="${task.description}" /></td>
 					<td><select name="severity" id="severity" >
-							<option value="starter">Current : ${task.severity}</option>
+							<option value="${task.severity}">Current : ${task.severity}</option>
 							<option value="HIGH">HIGH</option>
 							<option value="MEDIUM">MEDIUM</option>
 							<option value="LOW">LOW</option>
 					</select></td>
 				<td><input type="text" name="user.userid" id="user.userid"
-					value="${task.user.userid}" /></td>
+					value="${task.user.userid}"  readonly/></td>
 
 			</tr>
 
 			</table>
 			<input type="submit" value="update" />
+			
+			
 		</form>
 	</div>
 &nbsp;
 		<a href="/logout">
 			<button>logout</button>
+		</a>&nbsp;&nbsp;
+		<a href="/">
+			<button>Back to Home</button>
 		</a>
 </body>
 </html>

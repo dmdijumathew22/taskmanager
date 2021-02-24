@@ -9,8 +9,9 @@
 </head>
 <style type="text/css">
 table {
-	width: 100%;
+	width: 75%;
 	align-content: center;
+	justify-content: center;
 }
 
 table, th, td {
@@ -22,10 +23,19 @@ th, td {
 	padding: 15px;
 	text-align: center;
 }
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+
 </style>
 <body>
 	Do you want to delete the following task?
 	<br />
+	<br/>
+	<div align="center">
 	<form action="deleteconf" method="post">
 		<table style="width: 75%">
 			<tr>
@@ -62,9 +72,14 @@ th, td {
 		<input type="submit" value="Confirm" /> <input type="submit"
 			value="back" onclick="${pageContext.request.contextPath}/display';">
 	</form>
+	</div>
+	<br/> <br/>
 &nbsp;
 		<a href="/logout">
 			<button>logout</button>
+		</a>&nbsp;&nbsp;
+		<a href="/">
+			<button>Back to Home</button>
 		</a>
 </body>
 </html>
